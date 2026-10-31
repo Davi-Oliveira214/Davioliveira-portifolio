@@ -1,5 +1,4 @@
 import { IconExternalLink, IconBrandGithub } from '@tabler/icons-react'
-import { getLinguagem } from '../../data/techs'
 
 export default function CardProjeto({ item }) {
    const { titulo, descricao, linguagem, gitHub, imagem, visita } = item.sobre
@@ -48,20 +47,15 @@ function ListaLinguagens({ Linguagens }) {
          {Linguagens.map((Icone, index) => (
             <li
                key={index}
-               className='border-2 border-deep-space-blue-800 bg-[rgba(15,39,59,0.8)] rounded-md px-4 py-0.5'
+               className='border-2 border-deep-space-blue-800 bg-[rgba(15,39,59,0.8)] rounded-md px-3 py-1 overflow-hidden'
             >
-               <Icone size={28} stroke={1} className='text-extra-branco' />
+               <Icone
+                  width={28}
+                  className='text-extra-branco relative -left-50 filter drop-shadow-[200px_0_0_#FFF]'
+               />
             </li>
          ))}
       </ul>
-   )
-}
-
-function IconeLinguagem({ img }) {
-   return (
-      <li className='border-2 border-deep-space-blue-800 bg-[rgba(15,39,59,0.8)] rounded-md px-4 py-0.5'>
-         <img src={img} alt='' className='min-w-7 object-cover' />
-      </li>
    )
 }
 
