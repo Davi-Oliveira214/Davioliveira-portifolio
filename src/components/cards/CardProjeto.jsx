@@ -11,9 +11,9 @@ export default function CardProjeto({ item }) {
                <img
                   src={imagem}
                   alt={titulo}
-                  className='h-full w-full object-cover object-top'
+                  className='h-full w-full object-fill object-top'
                />
-               <ListaLinguagens linguagens={linguagem} />
+               <ListaLinguagens Linguagens={linguagem} />
             </div>
             <div className='flex flex-col gap-3 flex-1 w-full p-[15px_9px] text-extra-branco/50'>
                <h3 className='text-2xl font-bold italic text-extra-branco'>
@@ -42,13 +42,16 @@ export default function CardProjeto({ item }) {
    )
 }
 
-function ListaLinguagens({ linguagens }) {
-   const lista = getLinguagem(linguagens)
-
+function ListaLinguagens({ Linguagens }) {
    return (
       <ul className='absolute flex items-end w-full overflow-x-scroll scrollbar-none h-full px-3.5 py-3 gap-2.5 bg-[rgba(31,81,122,0.2)] bottom-0'>
-         {lista.map((img, i) => (
-            <IconeLinguagem key={i} img={img} />
+         {Linguagens.map((Icone, index) => (
+            <li
+               key={index}
+               className='border-2 border-deep-space-blue-800 bg-[rgba(15,39,59,0.8)] rounded-md px-4 py-0.5'
+            >
+               <Icone size={28} stroke={1} className='text-extra-branco' />
+            </li>
          ))}
       </ul>
    )
@@ -57,11 +60,7 @@ function ListaLinguagens({ linguagens }) {
 function IconeLinguagem({ img }) {
    return (
       <li className='border-2 border-deep-space-blue-800 bg-[rgba(15,39,59,0.8)] rounded-md px-4 py-0.5'>
-         <img
-            src={img}
-            alt=''
-            className='min-w-7 object-cover'
-         />
+         <img src={img} alt='' className='min-w-7 object-cover' />
       </li>
    )
 }
