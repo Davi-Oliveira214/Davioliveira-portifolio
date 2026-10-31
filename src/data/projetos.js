@@ -7,7 +7,6 @@ import livraria from '../assets/img/projetos/livraria.png'
 import restaurante from '../assets/img/projetos/restaurante.png'
 import sempreMei from '../assets/img/projetos/sempre_mei.png'
 import { DiJava, DiPostgresql, DiReact } from 'react-icons/di'
-import { GiSpring } from 'react-icons/gi'
 import { SiSpringboot } from 'react-icons/si'
 import { RiTailwindCssFill } from 'react-icons/ri'
 
