@@ -60,52 +60,28 @@ export default function ContactForm() {
       }
 
       let resp
+
+      const formData = new FormData()
+      Object.entries(payload).forEach(([k, v]) => formData.append(k, v))
+      formData.append('access_key', import.meta.env.VITE_KEY_FORM)
+
       try {
-         resp = await fetch(import.meta.env.VITE_API_URL_SPRING, {
+         resp = await fetch(import.meta.env.VITE_API_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
+            body: formData,
          })
 
-         if (resp.status === 400) {
-            setErrorMsg('Por favor, preencha todos os campos corretamente.')
-            setStatus('error')
-            return
-         }
-
-         if (!resp.ok) throw new Error(`Erro no servidor: ${resp.status}`)
-
          const data = await resp.json()
-         if (data.status === 200) {
+         if (data.success) {
             setStatus('success')
             setForm({ name: '', email: '', subject: '', message: '' })
          } else {
             setStatus('error')
-            setErrorMsg('Ocorreu um erro. Tente novamente.')
+            setErrorMsg('Não foi possível enviar. Tente novamente.')
          }
       } catch {
-         const formData = new FormData()
-         Object.entries(payload).forEach(([k, v]) => formData.append(k, v))
-         formData.append('access_key', import.meta.env.VITE_KEY_FORM)
-
-         try {
-            resp = await fetch(import.meta.env.VITE_API_URL, {
-               method: 'POST',
-               body: formData,
-            })
-
-            const data = await resp.json()
-            if (data.success) {
-               setStatus('success')
-               setForm({ name: '', email: '', subject: '', message: '' })
-            } else {
-               setStatus('error')
-               setErrorMsg('Não foi possível enviar. Tente novamente.')
-            }
-         } catch {
-            setStatus('error')
-            setErrorMsg('Erro de conexão. Verifique sua internet.')
-         }
+         setStatus('error')
+         setErrorMsg('Erro de conexão. Verifique sua internet.')
       }
    }
 
