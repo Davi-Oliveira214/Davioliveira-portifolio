@@ -4,7 +4,7 @@ import ContactForm from './ContatoForm.jsx'
 export default function Rodape() {
    return (
       <footer
-         className='flex flex-col w-full bg-deep-space-blue-900 px-4'
+         className='flex flex-col w-full bg-deep-space-blue-900 px-4 [--vertical:70px]'
          id='contato'
       >
          <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 py-6 items-start'>

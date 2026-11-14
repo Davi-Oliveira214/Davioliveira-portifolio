@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import banner1 from '../assets/img/hero/banner1.png'
 import banner2 from '../assets/img/hero/banner2.png'
 import banner3 from '../assets/img/hero/banner3.png'
@@ -6,7 +6,7 @@ import { IconArrowNarrowRight } from '@tabler/icons-react'
 
 export default function Hero() {
    return (
-      <section className='flex relative h-120' id='inicio'>
+      <section className='flex relative h-120 [--horizontal:-70px]' id='inicio'>
          <div className='z-10 flex flex-col justify-evenly h-full w-full gap-2.5 px-3 lg:px-5 py-15 md:w-[55%] rounded-br-full bg-deep-space-blue-900'>
             <BannerDisponibilidade />
             <Apresentacao />

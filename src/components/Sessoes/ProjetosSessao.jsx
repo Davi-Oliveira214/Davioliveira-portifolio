@@ -4,7 +4,7 @@ import CardProjeto from '../cards/CardProjeto'
 
 export default function Projetos() {
    return (
-      <section className='w-full px-4 mb-2' id='projetos'>
+      <section className='w-full px-4 mb-2 [--vertical:70px]' id='projetos'>
          <Titulo texto={'Projetos'} />
          <ul
             style={{ '--colunas': projetos.length }}

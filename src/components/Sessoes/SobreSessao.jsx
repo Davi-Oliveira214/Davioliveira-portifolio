@@ -8,7 +8,10 @@ import { sobre } from '../../data/sobre.js'
 
 export default function SobreSessao() {
    return (
-      <section className='w-full px-4 flex flex-col gap-3' id='sobre'>
+      <section
+         className='w-full px-4 flex flex-col gap-3 [--horizontal:-70px]'
+         id='sobre'
+      >
          <Titulo texto='Sobre mim' />
          <FotoPerfil />
          <GridSobre />

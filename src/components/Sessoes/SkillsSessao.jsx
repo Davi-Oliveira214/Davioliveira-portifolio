@@ -16,7 +16,7 @@ export default function SkillsSessao({ titulo = 'Conhecimentos' }) {
    }, [])
 
    return (
-      <section className='flex flex-col gap-5 px-4 py-2 bg-deep-space-blue-950'>
+      <section className='flex flex-col gap-5 px-4 py-2 bg-deep-space-blue-950 [--horizontal:70px]'>
          <TituloSessao texto={titulo} />
          <div className='w-full overflow-x-hidden mask-l-from-80% mask-r-from-80%'>
             <ul

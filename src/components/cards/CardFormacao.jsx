@@ -2,8 +2,6 @@ export default function CardFormacao({ infomacoes }) {
    const { id, instituicao, curso, inicio, fim, descricao, aprendizados } =
       infomacoes
 
-   console.log(fim)
-
    return (
       <li className='w-full'>
          <details className='flex flex-col w-full bordaPadrao bg-deep-space-blue-900 text-extra-branco snap-center'>
