@@ -1,8 +1,8 @@
-import Skills from './components/Sessoes/SkillsSessao.jsx'
+import Skills from './components/sessoes/SkillsSessao.jsx'
 import Hero from './components/Hero.jsx'
-import Sobre from './components/Sessoes/SobreSessao.jsx'
-import Projetos from './components/Sessoes/ProjetosSessao.jsx'
-import Educacao from './components/Sessoes/FormacaoSessao.jsx'
+import Sobre from './components/sessoes/SobreSessao.jsx'
+import Projetos from './components/sessoes/ProjetosSessao.jsx'
+import Educacao from './components/sessoes/FormacaoSessao.jsx'
 import Rodape from './components/Rodape.jsx'
 import Menu from './components/Header.jsx'
 import { useEffect } from 'react'
@@ -18,7 +18,7 @@ export default function App() {
                }
             })
          },
-         { threshold: 0.25 },
+         { threshold: 0.15 },
       )
 
       document.querySelectorAll('section, footer').forEach((el) => {

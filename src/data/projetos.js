@@ -1,6 +1,8 @@
 import livraria from '../assets/img/projetos/livraria.png'
+import livrariaWeb from '../assets/img/projetos/livraria_web.png'
 import restaurante from '../assets/img/projetos/restaurante.png'
 import sempreMei from '../assets/img/projetos/sempre_mei.png'
+import xcore from '../assets/img/projetos/robocode.png'
 import {
    Java,
    Html5,
@@ -29,7 +31,6 @@ export const projetos = [
          visita: 'https://davi-oliveira214.github.io/sempre-mei/',
       },
    },
-
    {
       projeto: 'Livraria Java',
 
@@ -42,6 +43,24 @@ export const projetos = [
          linguagem: [Java, Spring, Postgresql],
 
          gitHub: 'https://github.com/Davi-Oliveira214/livraria-java',
+
+         imagem: livraria,
+
+         visita: '',
+      },
+   },
+   {
+      projeto: 'Livraria-web',
+
+      sobre: {
+         titulo: 'Livraria Web',
+
+         descricao:
+            'Frontend web desenvolvido em React para gerenciamento e consulta de livros. A aplicação consome a API da Livraria Java e permite listar, cadastrar, editar, excluir e filtrar livros, além de acompanhar o histórico completo dos livros adicionados.',
+
+         linguagem: [Javascript, Tailwindcss],
+
+         gitHub: 'https://github.com/Davi-Oliveira214/Livraria-web',
 
          imagem: livraria,
 
@@ -62,6 +81,24 @@ export const projetos = [
          gitHub: 'https://github.com/Davi-Oliveira214/Restaurante-Java-React',
 
          imagem: restaurante,
+
+         visita: '',
+      },
+   },
+   {
+      projeto: 'Xcore',
+
+      sobre: {
+         titulo: 'Xcore — Robôs de Combate',
+
+         descricao:
+            'Projeto acadêmico desenvolvido em Java para a plataforma Robocode. Focado no robô Xcore, o projeto implementa estratégias de movimentação aleatória, radar independente, mira baseada em distância e reações automatizadas a colisões e impactos.',
+
+         linguagem: [Java],
+
+         gitHub: 'https://github.com/Davi-Oliveira214/Xcore',
+
+         imagem: xcore,
 
          visita: '',
       },

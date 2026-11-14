@@ -61,7 +61,7 @@ O repositório contém apenas o frontend. Não há um back-end próprio implemen
 │   │   ├── img/hero/           # Imagens rotativas da seção inicial
 │   │   └── img/projetos/        # Imagens dos projetos
 │   ├── components/
-│   │   ├── Sessoes/             # Seções de conhecimentos, projetos, formação e sobre
+│   │   ├── sessoes/             # Seções de conhecimentos, projetos, formação e sobre
 │   │   ├── cards/               # Cards reutilizáveis
 │   │   ├── ContatoForm.jsx      # Formulário de contato
 │   │   ├── Header.jsx           # Menu lateral por âncoras
