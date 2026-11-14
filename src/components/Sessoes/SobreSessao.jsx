@@ -30,7 +30,7 @@ function FotoPerfil() {
    }, [])
 
    return (
-      <div className='relative w-full h-100 bordaPadrao'>
+      <figure className='relative w-full h-100 bordaPadrao'>
          {imagens.map((img, i) => (
             <img
                key={i}
@@ -44,14 +44,14 @@ function FotoPerfil() {
 
          <div className='absolute inset-0 bg-linear-to-t from-deep-space-blue-950/90 via-transparent to-transparent pointer-events-none' />
 
-         <div className='absolute bottom-3.5 left-4'>
+         <figcaption className='absolute bottom-3.5 left-4'>
             <h2 className='text-extra-branco text-xl font-bold'>
                Davi De Jesus
             </h2>
             <p className='text-deep-space-blue-700 text-sm mt-0.5'>
                Estudante FullStack
             </p>
-         </div>
+         </figcaption>
 
          <div className='absolute bottom-4 right-4 flex gap-1.5 items-center'>
             {imagens.map((_, i) => (
@@ -65,7 +65,7 @@ function FotoPerfil() {
                />
             ))}
          </div>
-      </div>
+      </figure>
    )
 }
 

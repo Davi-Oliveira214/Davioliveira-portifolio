@@ -4,13 +4,13 @@ import Titulo from '../Titulos'
 
 export default function FormacaoSessao() {
    return (
-      <div className='w-full px-4' id='formacao'>
+      <section className='w-full px-4' id='formacao'>
          <Titulo texto={'Formação'} />
-         <div className='flex px-2 py-3 gap-3 flex-wrap max-h-60 overflow-y-scroll scrollbar-thin scrollbar-thumb-deep-space-blue-900 snap-mandatory snap-y scroll-smooth'>
+         <ol className='flex px-2 py-3 gap-3 flex-wrap max-h-60 overflow-y-scroll scrollbar-thin scrollbar-thumb-deep-space-blue-900 snap-mandatory snap-y scroll-smooth flex-col-reverse'>
             {formacao.map((f) => (
                <CardFormacao key={f.id} infomacoes={f} />
             ))}
-         </div>
-      </div>
+         </ol>
+      </section>
    )
 }

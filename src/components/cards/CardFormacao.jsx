@@ -1,26 +1,30 @@
 export default function CardFormacao({ infomacoes }) {
-   const { instituicao, curso, inicio, fim, descricao, aprendizados } =
+   const { id, instituicao, curso, inicio, fim, descricao, aprendizados } =
       infomacoes
 
+   console.log(fim)
+
    return (
-      <details className='flex flex-col w-full bordaPadrao bg-deep-space-blue-900 text-extra-branco snap-center'>
-         <summary className='list-none flex flex-col px-3 py-2 bg-[rgba(7,19,28,0.6)] cursor-pointer'>
-            <div className='flex justify-between'>
-               <PeriodoFormacao inicio={inicio} fim={fim} />
-               <Status fim={fim} />
+      <li className='w-full'>
+         <details className='flex flex-col w-full bordaPadrao bg-deep-space-blue-900 text-extra-branco snap-center'>
+            <summary className='list-none flex flex-col px-3 py-2 bg-[rgba(7,19,28,0.6)] cursor-pointer'>
+               <div className='flex justify-between'>
+                  <PeriodoFormacao inicio={inicio} fim={fim} />
+                  <Status fim={fim} />
+               </div>
+               <NomeInstituicao instituicao={instituicao} />
+               <NomeCurso curso={curso} />
+            </summary>
+            <div className='flex flex-col gap-4 px-4 py-3'>
+               <DescricaoFormacao texto={descricao} />
+               <div className='flex flex-wrap gap-y-2.5 gap-x-4 justify-center'>
+                  {aprendizados.map((i) => (
+                     <TagAprendizado key={`id-${i}`} texto={i} />
+                  ))}
+               </div>
             </div>
-            <NomeInstituicao instituicao={instituicao} />
-            <NomeCurso curso={curso} />
-         </summary>
-         <div className='flex flex-col gap-4 px-4 py-3'>
-            <DescricaoFormacao texto={descricao} />
-            <div className='flex flex-wrap gap-y-2.5 gap-x-4 justify-center'>
-               {aprendizados.map((i) => (
-                  <TagAprendizado key={`id-${i}`} texto={i} />
-               ))}
-            </div>
-         </div>
-      </details>
+         </details>
+      </li>
    )
 }
 
