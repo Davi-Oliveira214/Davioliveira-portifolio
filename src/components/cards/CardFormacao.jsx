@@ -1,14 +1,18 @@
 export default function CardFormacao({ infomacoes }) {
-   const { id, instituicao, curso, inicio, fim, descricao, aprendizados } =
+   const { id, instituicao, curso, periodo, fim, descricao, aprendizados } =
       infomacoes
+
+   const agora = new Date()
+   const dataAtual = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}`
+   const concluido = dataAtual >= fim ? 1 : 0
 
    return (
       <li className='min-w-full'>
          <details className='flex flex-col w-full bordaPadrao bg-deep-space-blue-900 text-extra-branco snap-center'>
             <summary className='list-none flex flex-col px-3 py-2 bg-[rgba(7,19,28,0.6)] cursor-pointer'>
                <div className='flex justify-between'>
-                  <PeriodoFormacao inicio={inicio} fim={fim} />
-                  <Status fim={fim} />
+                  <PeriodoFormacao periodo={periodo} />
+                  <Status concluido={concluido} />
                </div>
                <NomeInstituicao instituicao={instituicao} />
                <NomeCurso curso={curso} />
@@ -26,12 +30,7 @@ export default function CardFormacao({ infomacoes }) {
    )
 }
 
-function Status({ fim }) {
-   let agora = new Date()
-   const dataAtual = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}`
-
-   const concluido = dataAtual >= fim
-
+function Status({ concluido }) {
    let style = concluido
       ? 'text-hunter-green-700 bg-[rgba(43,59,43,0.3)] border-hunter-green-700'
       : 'text-deep-space-blue-700 bg-[rgba(31,81,122,0.2)] border-deep-space-blue-800'
@@ -45,26 +44,10 @@ function Status({ fim }) {
    )
 }
 
-function PeriodoFormacao({ inicio, fim }) {
-   const inicioData = new Date(`${inicio}-01T00:00:00`).toLocaleDateString(
-      'pt-BR',
-      {
-         month: 'numeric',
-         year: 'numeric',
-      },
-   )
-
-   const fimData = new Date(`${inicio}-01T00:00:00`).toLocaleDateString(
-      'pt-BR',
-      {
-         month: 'numeric',
-         year: 'numeric',
-      },
-   )
-
+function PeriodoFormacao({ periodo }) {
    return (
       <p className='w-max p-[3px_7px] text-sm text-deep-space-blue-700 bg-deep-space-blue-900 border border-deep-space-blue-800 rounded-2xl mb-1'>
-         {`${inicioData} - ${fimData}`}
+         {`${periodo}`}
       </p>
    )
 }
